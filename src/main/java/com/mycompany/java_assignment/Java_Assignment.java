@@ -6,6 +6,8 @@ public class Java_Assignment {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int Balance  = 5000; 
+        while(true)
+        {
         System.out.println("Welcome to Dutch Bangla ATM Booth : ");
         System.out.println("1.Withdraw");
         System.out.println("2.Deposit");
@@ -13,16 +15,16 @@ public class Java_Assignment {
         System.out.println("4.Exit");
         System.out.print("Please Enter A number : ");
         int input = sc.nextInt();
-        while(true)
-        {
-            switch (input) {
+        switch (input) {
             case 1:
-                System.out.println("Your Account Have 5000 TK ");
+                System.out.println("Your Account Have " + Balance + " TK");
                 System.out.print("Please Enter The Amount You want to Withdraw : ");
                 int withdrawmoney = sc .nextInt();
                 if(withdrawmoney <= Balance)
                 {
                     System.out.println("Dear Customer You Successfully WithDraw  : " + withdrawmoney + " TK");
+                    Balance = (Balance - withdrawmoney) ;
+                    System.out.println("Dear Customer Your Current Balance is  : " + Balance  + " TK");
                 }
                 else
                 {
@@ -32,8 +34,8 @@ public class Java_Assignment {
                 System.out.print("Please Enter The Amount You want to Diposit : ");
                 int dipositmoney = sc .nextInt();
                 System.out.println("Dear Customer You Successfully Diposit  : " + dipositmoney + " TK");
-                dipositmoney = dipositmoney+Balance ;
-                System.out.println("Dear Customer Your Account Balance is  : " + dipositmoney + " TK");
+                Balance = dipositmoney+Balance ;
+                System.out.println("Dear Customer Your Account Balance is  : " + Balance + " TK");
                 break;
             case 3:
                 System.out.println("Dear Customer Your Account Balance is  : " + Balance + " TK");
@@ -45,6 +47,5 @@ public class Java_Assignment {
                 break;
         }
         }
-        
 }
 }
